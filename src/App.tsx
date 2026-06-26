@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { Users, Globe, Lightbulb, GraduationCap, CheckCircle2, ChevronDown } from 'lucide-react';
+import { Users, Globe, Lightbulb, GraduationCap, CheckCircle2, ChevronDown, ArrowRight, Lock, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const faqs = [
@@ -44,22 +44,22 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans selection:bg-[#2A3464] selection:text-white">
       {/* Hero Section */}
-      <div className="relative w-full pb-32 md:pb-40 bg-gray-900 pt-20 lg:pt-28">
+      <div className="relative w-full pb-32 md:pb-40 bg-[#0A0D14] pt-24 lg:pt-32 min-h-[90vh] flex items-center">
         {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden bg-gray-900">
+        <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#0A0D14]">
           <img
-            src="https://i.postimg.cc/YC38ZgBZ/Chat-GPT-Image-Jun-25-2026-06-23-35-PM.png"
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
             alt="HITM Campus"
-            className="w-full h-full object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center opacity-30 mix-blend-luminosity"
           />
-          {/* Gradient Overlay matching reference (dark left, fading to right) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/40"></div>
-          {/* Extra mobile dark overlay */}
-          <div className="absolute inset-0 bg-gray-900/60 lg:hidden"></div>
+          {/* Main Gradient overlay - dark on left, fading out on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0D14] via-[#0A0D14]/90 to-transparent"></div>
+          {/* Bottom gradient to blend with next section */}
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0A0D14] to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Content */}
             <motion.div
@@ -68,36 +68,39 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-7 text-white space-y-6"
             >
-              {/* Badges */}
-              <div className="flex flex-wrap gap-3 mb-2">
-                <span className="border border-white/50 text-white text-xs md:text-sm font-medium px-4 py-1.5 rounded-full backdrop-blur-sm">
-                  NAAC 'A' Accredited
-                </span>
-                <span className="border border-white/50 text-white text-xs md:text-sm font-medium px-4 py-1.5 rounded-full backdrop-blur-sm">
-                  UGC Approved
-                </span>
-              </div>
-
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-snug">
-                Future Managers Aur Entrepreneurs <br className="hidden md:block"/> Yahin Se Shuruaat Karte Hain.
-              </h2>
-
-              <div>
-                <div className="bg-[#2A3464] text-white text-5xl md:text-7xl font-extrabold inline-block px-6 py-2 shadow-lg tracking-tight">
-                  BBA
+              {/* Top Label */}
+              <div className="flex items-center gap-3 mb-6 pl-1">
+                <div className="flex items-center justify-center w-5 h-5 rounded-full border border-[#FFD700]">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#FFD700]"></div>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mt-3 tracking-tight">
-                  at HITM Ranchi
-                </h3>
+                <span className="text-xs sm:text-sm font-bold text-[#FFD700] tracking-[0.15em] uppercase">
+                  BBA - HITM Ranchi
+                </span>
               </div>
 
-              <p className="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed border-l-4 border-[#2A3464] pl-4">
+              <div className="space-y-2">
+                <h1 className="flex flex-col gap-1 text-4xl md:text-5xl lg:text-[4.5rem] font-black text-white leading-[1.1] tracking-tight uppercase">
+                  <span>Future Managers &</span>
+                  <span className="text-[#FFD700]">Entrepreneurs</span>
+                </h1>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-100 mt-4 tracking-tight">
+                  Yahin Se Shuruaat Karte Hain.
+                </h2>
+              </div>
+
+              <p className="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed mt-6">
                 Build a strong foundation in business, management, leadership, and entrepreneurship at one of Jharkhand's biggest dedicated private Technology & Management Campuses.
               </p>
 
-              <div className="pt-4 flex items-center gap-2 text-sm text-gray-300">
-                <CheckCircle2 className="w-5 h-5 text-green-400" />
-                <span>Globally recognised | 25 Years of Experience</span>
+
+              <div className="mt-10 pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex items-center gap-2 bg-[#0A0D14]/80 border border-white/10 text-white text-[10px] sm:text-xs font-bold px-4 py-3.5 rounded uppercase tracking-wider backdrop-blur-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-pulse"></span>
+                  Admissions Open - 2026 Intake
+                </div>
+                <button className="bg-[#FFD700] text-black font-bold px-8 py-3.5 rounded text-sm uppercase tracking-wider flex items-center gap-2 hover:bg-[#F0C800] transition-colors shadow-lg">
+                  Apply Now <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </motion.div>
 
@@ -106,110 +109,71 @@ export default function App() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-5 lg:pl-10 mt-8 lg:mt-0"
+              className="lg:col-span-5 relative mt-12 lg:mt-0"
             >
-              <div className="bg-white rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-md mx-auto lg:mr-0 border border-gray-100 relative overflow-hidden">
-                {/* Top decoration line */}
-                <div className="absolute top-0 left-0 w-full h-1.5 bg-[#2A3464]"></div>
-
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-6 text-center">
-                  Limited Seats - Apply Now!
-                </h3>
-
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Name*"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2A3464]/20 focus:border-[#2A3464] outline-none transition-colors text-sm text-gray-800 placeholder-gray-400"
-                    />
+              <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full max-w-md mx-auto lg:mr-0 overflow-hidden relative border border-white/10">
+                <div className="bg-[#121C8A] p-6 text-white text-left">
+                  <h3 className="text-lg md:text-xl font-bold mb-1.5 leading-tight">
+                    BBA Career Counseling Session
+                  </h3>
+                  <p className="text-xs text-white/90 font-medium opacity-90">Fill in your details and our counselor will reach out within 24 hrs.</p>
+                </div>
+                
+                <div className="p-6 md:p-8">
+                  <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                    <div>
+                      <label className="block text-[11px] font-bold text-gray-800 mb-1.5">Full Name *</label>
+                      <input
+                        type="text"
+                        placeholder="Enter your full name"
+                        required
+                        className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-md focus:ring-2 focus:ring-[#121C8A]/20 focus:border-[#121C8A] outline-none transition-all text-sm text-gray-800 placeholder-gray-400"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-gray-800 mb-1.5">Phone Number *</label>
+                      <input
+                        type="tel"
+                        placeholder="+91 00000 00000"
+                        required
+                        className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-md focus:ring-2 focus:ring-[#121C8A]/20 focus:border-[#121C8A] outline-none transition-all text-sm text-gray-800 placeholder-gray-400"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-gray-800 mb-1.5">Course Interest *</label>
+                      <input
+                        type="text"
+                        defaultValue="BBA"
+                        readOnly
+                        className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-md focus:outline-none text-sm text-gray-600 cursor-not-allowed"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-gray-800 mb-1.5">City *</label>
+                      <input
+                        type="text"
+                        placeholder="Your city"
+                        required
+                        className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-md focus:ring-2 focus:ring-[#121C8A]/20 focus:border-[#121C8A] outline-none transition-all text-sm text-gray-800 placeholder-gray-400"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-[#FFD700] hover:bg-[#F0C800] text-black font-bold py-3.5 px-4 rounded-md transition-colors mt-6 text-sm uppercase tracking-wider"
+                    >
+                      Apply Now
+                    </button>
+                  </form>
+                  <div className="mt-5 flex items-center justify-center gap-1.5 text-[10px] text-gray-500 font-semibold">
+                    <Lock className="w-3 h-3 text-gray-400" />
+                    <span>Your information is 100% secure and confidential</span>
                   </div>
-                  <div>
-                    <input
-                      type="tel"
-                      placeholder="Mobile*"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2A3464]/20 focus:border-[#2A3464] outline-none transition-colors text-sm text-gray-800 placeholder-gray-400"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Email*"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#2A3464]/20 focus:border-[#2A3464] outline-none transition-colors text-sm text-gray-800 placeholder-gray-400"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#2A3464] hover:bg-[#1f274a] text-white font-semibold py-3.5 px-4 rounded-md transition-colors shadow-md mt-2 text-sm md:text-base"
-                  >
-                    Start Here
-                  </button>
-                </form>
-                <p className="text-xs text-center text-gray-500 mt-4">
-                  By submitting, you agree to our Terms & Conditions.
-                </p>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
-
-      {/* Floating Bottom Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full -mt-20 md:-mt-16 pb-16"
-      >
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-2 md:p-4">
-          <div className="flex flex-col md:flex-row items-center justify-between divide-y md:divide-y-0 md:divide-x divide-gray-100">
-
-            {/* Feature 1 */}
-            <div className="flex flex-col items-center justify-center p-6 w-full group">
-              <div className="w-12 h-12 rounded-xl bg-blue-50/50 flex items-center justify-center mb-3 text-[#2A3464] group-hover:scale-110 transition-transform duration-300">
-                <Users strokeWidth={1.5} size={24} />
-              </div>
-              <h4 className="text-xs md:text-sm font-semibold text-gray-700 text-center leading-relaxed">
-                Vibrant Student<br className="hidden xl:block"/> Community
-              </h4>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="flex flex-col items-center justify-center p-6 w-full group">
-              <div className="w-12 h-12 rounded-xl bg-blue-50/50 flex items-center justify-center mb-3 text-[#2A3464] group-hover:scale-110 transition-transform duration-300">
-                <Globe strokeWidth={1.5} size={24} />
-              </div>
-              <h4 className="text-xs md:text-sm font-semibold text-gray-700 text-center leading-relaxed">
-                Global Industry<br className="hidden xl:block"/> Ties
-              </h4>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="flex flex-col items-center justify-center p-6 w-full group">
-              <div className="w-12 h-12 rounded-xl bg-blue-50/50 flex items-center justify-center mb-3 text-[#2A3464] group-hover:scale-110 transition-transform duration-300">
-                <Lightbulb strokeWidth={1.5} size={24} />
-              </div>
-              <h4 className="text-xs md:text-sm font-semibold text-gray-700 text-center leading-relaxed">
-                Innovation Driven<br className="hidden xl:block"/> Campus
-              </h4>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="flex flex-col items-center justify-center p-6 w-full group">
-              <div className="w-12 h-12 rounded-xl bg-blue-50/50 flex items-center justify-center mb-3 text-[#2A3464] group-hover:scale-110 transition-transform duration-300">
-                <GraduationCap strokeWidth={1.5} size={24} />
-              </div>
-              <h4 className="text-xs md:text-sm font-semibold text-gray-700 text-center leading-relaxed">
-                Future Ready<br className="hidden xl:block"/> Learning
-              </h4>
-            </div>
-
-          </div>
-        </div>
-      </motion.div>
 
       {/* Why Choose BBA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white relative">
