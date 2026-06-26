@@ -1,0 +1,6 @@
+{
+  "name": "HITM BBA Landing Page",
+  "description": "Hero section for HITM BBA programs with lead capture form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
